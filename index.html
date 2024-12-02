@@ -4,23 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--=============== FAVICON ===============-->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" class="favicon">
-
     <!--=============== REMIX ICONS ===============-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-
     <!--=============== SWIPER CSS ===============-->
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
     <title>Huracàn</title>
 </head>
 
 <body>
-    <!--==================== HEADER ====================-->
+    <!--==================== START ====================-->
     <header class="header" id="header">
         <nav class="nav container">
             <a href="" class="nav__logo">
@@ -51,7 +46,6 @@
                 </div>
             </div>
 
-            <!-- Togglar Button -->
             <div class="nav__toggle" id="nav-toggle">
                 <i class="ri-menu-line"></i>
             </div>
@@ -77,18 +71,15 @@
             const popupClose = document.getElementById('popup-close');
             const homeButton = document.querySelector('.home__button');
     
-            // Show popup on button click
             homeButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 popup.style.display = 'flex';
             });
     
-            // Close popup
             popupClose.addEventListener('click', () => {
                 popup.style.display = 'none';
             });
     
-            // Close popup when clicking outside the content
             popup.addEventListener('click', (e) => {
                 if (e.target === popup) {
                     popup.style.display = 'none';
@@ -97,7 +88,7 @@
         });
     </script>
     
-    <!--************* MAIN CODE ****************-->
+    <!--************* CONTENUTO ****************-->
 
     <main class="main">
         <!--==================== HOME ====================-->
@@ -163,7 +154,7 @@
                 </div>
 
         </section>
-         <!--==================== GALLERY BANNER ====================-->
+         <!--==================== VIDEO ====================-->
          <section class="gallery section">
             <div class="gallery__container container grid">
                 <video class="video__slide active" src="assets/video/vid_1.mp4" autoplay muted loop></video>
@@ -172,41 +163,7 @@
 
         </section>
 
-        <style>
-            .description__table {
-                width: 100%;
-                border-collapse: collapse;
-                font-family: var(--body-font);
-                color: var(--text-color);
-            }
-
-            .description__table th,
-            .description__table td {
-                padding: 12px 15px;
-                border: 1px solid var(--container-color);
-                text-align: center;
-            }
-
-            .description__table .table-header {
-                background-color: var(--first-color);
-                color: var(--white-color);
-                font-size: var(--h2-font-size);
-                font-weight: var(--font-semi-bold);
-            }
-
-            .description__table .table-subheader {
-                background-color: var(--container-color);
-                color: var(--white-color);
-                font-size: var(--normal-font-size);
-                font-weight: var(--font-medium);
-            }
-
-            .description__table td {
-                font-size: var(--normal-font-size);
-            }
-        </style>
-
-  <!--==================== OFFER ====================-->
+  <!--==================== MACH ====================-->
   <section class="offer section" id="ofer">
 
     <div class="offer__container container grid">
@@ -230,8 +187,26 @@
 
 </section>
 
+<dialog id="dialog8"> 
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/s1.jpg"></div>
+            <div class="swiper-slide"><img src="assets/img/s2.jpeg"></div>
+            <div class="swiper-slide"><img src="assets/img/s3.jpeg"></div>
+            <div class="swiper-slide"><img src="assets/img/s4.jpeg"></div>
+        </div>
+    </div>
+    <button onclick="window.dialog8.close();" aria-label="close" class="x">❌</button>
+</dialog>
 
-        <!--========</div>============ ABOUT ====================-->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        var swiper = new Swiper(".mySwiper", {
+        });
+    });
+</script>
+
+        <!--==================== DESC ====================-->
         <section class="about section" id="about">
             <div class="about__container container grid">
                 <div class="about__group">
@@ -246,6 +221,7 @@
                 <div class="about__data">
                     <h2 class="section__title about__title">Un'Auto Che Fonde Bellezza e Funzionalità</h2>
                     <p class="about__description">La Lamborghini Huracán si distingue per il suo design inconfondibile, caratterizzato da linee nette, aerodinamiche e da un profilo aggressivo. <br>Le superfici scolpite non sono solo una questione estetica, ma ottimizzano le prestazioni e la stabilità dell'auto. Il sistema di illuminazione a LED, innovativo per il segmento delle sportive di lusso, aggiunge un tocco futuristico alla vettura, migliorando la visibilità e l'estetica complessiva. L'abitacolo è altrettanto impressionante, con un display TFT da 12,3 pollici che offre informazioni chiare e intuitive, mentre gli interni, realizzati con materiali pregiati come pelle nappa e Alcantara, garantiscono un comfort senza pari. Ogni dettaglio degli interni è pensato per esaltare l'esperienza di guida e rendere ogni viaggio un piacere esclusivo.</p>
+                    <a class="button" onclick="window.dialog8.showModal();" style="user-select: none;">Centro Stile Design</a>
                 </div>
 
 
@@ -254,7 +230,7 @@
 
         </section>
         
-        <!--==================== POPULAR ====================-->
+        <!--==================== DESIGN ====================-->
         <section class="popular section" id="popular">
             <h2 class="section__title">
                 Altri tipi di <br> Lamborghini Huracàn
@@ -287,7 +263,7 @@
                         </div>
 
                         <h3 class="popular__price">227.000 €</h3>
-                        <button class="button popular__button" class="primary" onclick="window.dialog.showModal();" class="primary" onclick="window.dialog.showModal();">
+                        <button class="button popular__button" class="primary" onclick="window.dialog.showModal();">
                             <i class="ri-file-info-line"></i>
                         </button>
 
@@ -474,7 +450,6 @@
 
         </section>
 
-            <!-- Popup for car descriptions -->
             <div id="popup2" class="popup2">
                 <div class="popup-content2">
                   <span class="close-btn2" id="closeBtn2">&times;</span>
@@ -482,7 +457,7 @@
                 </div>
               </div>
         
-        <!--==================== DESCRIPTION TABLE ====================-->
+        <!--==================== TABELLA ====================-->
         <section class="description section" id="description">
             <div class="description__container container">
                 <table class="description__table">
